@@ -1,0 +1,10 @@
+<div class="container">
+  <input
+    type="text"
+    [(ngModel)]="userInput"
+    (keyUp.Enter)="setCityEnter(userInput, $event)"
+    class="searchBox"
+  />
+  <button (click)="setCityClick(userInput)" class="btn">search</button>
+</div>
+

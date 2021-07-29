@@ -1,0 +1,29 @@
+.container {
+  width: 80%;
+  margin: 2rem auto;
+  display: flex;
+}
+
+.searchBox {
+  width: 15rem;
+  margin-left: auto;
+  border: none;
+  border-radius: 8px 0 0 8px;
+  padding: 0.5rem 1rem;
+}
+
+.searchBox:focus-visible {
+  outline: none;
+}
+
+.btn {
+  width: 4.5rem;
+  padding: 0.5rem 0.1rem;
+  margin-right: auto;
+  border: none;
+  outline: none;
+  border-radius: 0 8px 8px 0;
+  background-color: #e6e6e6;
+  cursor: pointer;
+}
+  
