@@ -20,11 +20,17 @@ export class CardComponent implements OnInit {
   }
 
   Search(city: string) {
-    this.weatherData
-      .getData(city)
-      .subscribe(d => {this.data = d },err=> console.warn('wrong city!!',err));
+    this.weatherData.getData(city).subscribe(
+      (d) => {
+        this.data = d;
+      },
+      (err) => console.warn('wrong city!!', err)
+    );
   }
-  
+
+  roundData(temp: any) {
+    return Math.round(temp);
+  }
 
   degToCompass(num: number) {
     var val = Math.floor(num / 22.5 + 0.5);
@@ -61,7 +67,7 @@ export class CardComponent implements OnInit {
 
   setIcon(i: any) {
     i = parseInt(i);
-    this.icon = `../../assets/images/${i}.png`;
+    this.icon = `assets/images/${i}.png`;
     return this.icon;
   }
 }

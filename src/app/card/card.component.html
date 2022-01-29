@@ -2,23 +2,26 @@
   <div class="card" [className]="bg(data.weather[0].icon)">
     <h5 class="card-title card-text">{{ data.name }}</h5>
     <div class="card-body">
-      <img [src]='setIcon(data.weather[0].icon)' class="card-icon card-animation" />
+      <img
+        [src]="setIcon(data.weather[0].icon)"
+        class="card-icon card-animation"
+      />
       <p class="card-text weather">{{ data.weather[0].main }}</p>
-      <p class="card-text temp">{{ data.main.temp }}°C</p>
+      <p class="card-text temp">{{ roundData(data.main.temp) }}°C</p>
       <div class="body1">
         <p class="b-title">wind</p>
         <p class="b-title">temp</p>
       </div>
       <div class="body2">
         <p class="wind">
-          <img src="../../assets/images/wind.png" /> <br />
+          <img src="assets/images/wind.png" /> <br />
           speed:{{ data.wind.speed }} <br />
           dir:{{ degToCompass(data.wind.deg) }}
         </p>
         <p class="min-max">
-          <img src="../../assets/images/temp.png" alt="" /> <br />
-          max:{{ data.main.temp_max }} <br />
-          min:{{ data.main.temp_min }}
+          <img src="assets/images/temp.png" alt="" /> <br />
+          max: {{ roundData(data.main.temp_min) }} <br />
+          min:{{ roundData(data.main.temp_min) }}
         </p>
       </div>
     </div>
